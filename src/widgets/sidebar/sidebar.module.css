@@ -1,0 +1,18 @@
+.container {
+  border-right: 1px solid white;
+  padding: 2rem;
+  width: 12rem;
+}
+
+.linkWrapper {
+  margin-bottom: 1rem;
+}
+
+.link {
+  color: white;
+}
+
+.active {
+  color: #007bff;
+  font-weight: 700;
+}

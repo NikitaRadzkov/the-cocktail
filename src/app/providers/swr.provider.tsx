@@ -13,7 +13,6 @@ export const SWRProvider = ({ children }: PropsWithChildren<object>) => {
         fetcher: async (url, config) => {
           const response = await axiosInstance.get(url, {
             ...config,
-            withCredentials: true,
           });
 
           return response.data;

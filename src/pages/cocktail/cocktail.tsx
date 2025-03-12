@@ -7,6 +7,8 @@ import { AppConfig } from "@/shared/config";
 import CocktailCard from "@/widgets/cocktail-card";
 import Layout from "@/widgets/layout";
 
+import styles from "./cocktail.module.css";
+
 const Cocktail: React.FC = () => {
   const { query } = useParams<{ query: string }>();
   const { data } = useSWR<OutCocktails>(`${AppConfig.urls.api}?s=${query}`);
@@ -22,7 +24,7 @@ const Cocktail: React.FC = () => {
           <CocktailCard key={drink.idDrink} data={drink} />
         ))
       ) : (
-        <div>Drinks not found</div>
+        <div className={styles.notFound}>Drinks not found</div>
       )}
     </Layout>
   );

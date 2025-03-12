@@ -7,10 +7,6 @@ import styles from "./cocktail-card.module.css";
 import { CocktailCardProps } from "./types";
 
 const CocktailCard: React.FC<CocktailCardProps> = ({ data }) => {
-  if (!data) {
-    return <div>No cocktail data available.</div>;
-  }
-
   const getIngredientsAndMeasures = () => {
     const ingredientsAndMeasures = [];
     for (let i = 1; i <= 15; i++) {

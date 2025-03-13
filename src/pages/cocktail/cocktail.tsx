@@ -11,7 +11,12 @@ import styles from "./cocktail.module.css";
 
 const Cocktail: React.FC = () => {
   const { query } = useParams<{ query: string }>();
-  const { data } = useSWR<OutCocktails>(`${AppConfig.urls.api}?s=${query}`);
+  const { data } = useSWR<OutCocktails>(`${AppConfig.urls.api}?s=${query}`, {
+    revalidateIfStale: false,
+    revalidateOnMount: true,
+    revalidateOnFocus: false,
+    revalidateOnReconnect: true,
+  });
 
   const isDrinksExist = useMemo(() => {
     return (data && data?.drinks?.length > 0) || false;
